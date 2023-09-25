@@ -11,8 +11,12 @@ RUN apt update -qq && \
 
 COPY ./component /ros2_ws/src/component
 
-RUN set -x && \
-  : "build ROS2 packages" && cd /ros2_ws && \
-  bash -c "source /opt/ros/${ROS_DISTRO}/setup.bash; \
-  source /ros2_ws/install/setup.bash; \
-  colcon build --symlink-install"
+RUN . /opt/ros/$ROS_DISTRO/setup.sh && \
+    colcon build \
+      --symlink-install
+
+# source overlay from entrypoint
+ENV WORKSPACE $WORKSPACE
+RUN sed --in-place \
+      's|^source .*|source "$WORKSPACE/install/setup.bash"|' \
+      /ros_entrypoint.sh

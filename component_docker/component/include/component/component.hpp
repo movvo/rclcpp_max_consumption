@@ -40,25 +40,15 @@ private:
         <std_srvs::srv::Trigger::Request>,
         std::shared_ptr<std_srvs::srv::Trigger::Response> response);
 
-    /*!
-     * @brief Function to apply the logics to Activate the Component
-     */
-    bool Activate();
-
-    /*!
-     * @brief Function to apply the logics to Deactivate the Component
-     */
-    bool Deactivate();
-
     int IntenseWork();
 
 	rclcpp::Node::SharedPtr node_;
     
     // Activate/Deactivate
-    bool activated_; /*< Boolean to indicate if the Component is active or not */
+    bool activated_ = false; /*< Boolean to indicate if the Component is active or not */
     rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr transition_srv_; 
         /*< Service to trigger the transition of activation/deactivation */
-
+    std::thread thread_obj;
 };
 
 }  // namespace component
