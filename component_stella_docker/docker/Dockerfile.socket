@@ -1,0 +1,23 @@
+FROM ubuntu:20.04
+
+RUN echo 'Etc/UTC' > /etc/timezone && \
+    ln -s /usr/share/zoneinfo/Etc/UTC /etc/localtime && \
+    apt update -y -qq && \
+    apt upgrade -y -qq --no-install-recommends && \
+    apt install -y git \
+                curl \
+                npm \
+                nodejs
+
+WORKDIR /home
+RUN git clone --depth 1 --branch main_ros2 https://github.com/movvo/stella_vslam.git && \
+    mv stella_vslam/viewer . && \
+    rm -rf stella_vslam && \
+    cd viewer && \
+    npm install
+
+RUN set -x && sh -c "echo '#'\!'/bin/bash\necho using the following server and pub ports: \"\$@\" \nnode viewer/app.js \"\$@\"' > ./start_nodejs.sh" && \
+    chmod u+x ./start_nodejs.sh
+
+ENTRYPOINT [ "./start_nodejs.sh" ]
+

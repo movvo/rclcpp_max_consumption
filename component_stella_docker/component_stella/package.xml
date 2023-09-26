@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+    <name>component_stella</name>
+    <version>0.2.0</version>
+    <description>The ROS2 component for ikaros vslam</description>
+    <author>Movvo Robotics</author>
+    <maintainer email="support.idi@movvo.eu">movvo</maintainer>
+
+    <license>2-clause BSD</license>
+
+    <buildtool_depend>ament_cmake</buildtool_depend>
+
+    <depend>rclcpp</depend>
+    <depend>rclcpp_components</depend>
+    <depend>rcutils</depend>
+    <depend>stella_vslam</depend>
+    <depend>eigen</depend>
+    <depend>libgoogle-glog-dev</depend>
+    <depend>image_transport</depend>
+    <depend>cv_bridge</depend>
+    <depend>geometry_msgs</depend>
+    <depend>sensor_msgs</depend>
+    <depend>message_filters</depend>
+    <depend>yaml-cpp</depend>
+    <depend>tf2</depend>
+    <depend>tf2_eigen</depend>
+    <depend>tf2_geometry_msgs</depend>
+    <depend>tf2_msgs</depend>
+    <depend>tf2_ros</depend>
+    <depend>std_srvs</depend>
+</package>
