@@ -9,6 +9,9 @@ RUN apt update -qq && \
     apt upgrade -y -qq --no-install-recommends && \
     apt install -y ros-$ROS_DISTRO-rmw-cyclonedds-cpp
 
+COPY ./vocab  /vocab
+COPY ./config /config
+
 COPY ./component_stella /ros2_ws/src/component_stella
 
 RUN . /opt/ros/$ROS_DISTRO/setup.sh && \

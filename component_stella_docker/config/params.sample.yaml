@@ -1,0 +1,25 @@
+# ===========================
+#  Namespace (nombre robot)
+# ===========================
+# movvo_robotics:
+# ===================
+#     NODOS
+# ===================
+StellaParameters:
+  ros__parameters:
+    # ----- StellaParameters PARAMS -----
+    cfg_path: "/config/config_calicam_920.yaml"
+    vocab_file: "/vocab/orb_vocab.fbow"
+    mask_img_path: ""
+    rectify: false
+    map_folder_path: "/maps"
+    map: "test_map.msg"
+    status_topic: "/status"
+    image_topic: "/camera/image_raw"
+    publish_tf: false
+    odom_frame: "odom"
+    map_frame: "map"
+    base_link: "base_footprint"
+    camera_frame: "camera_frame"
+    transform_tolerance: 0.5
+    pub_period: 1000 

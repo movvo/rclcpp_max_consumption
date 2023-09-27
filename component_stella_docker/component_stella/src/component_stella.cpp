@@ -70,9 +70,6 @@ void ComponentStella::setParams()
     image_topic_ = node_->declare_parameter<std::string>("image_topic", 
         "/camera/image_raw");
 
-    status_topic_ = node_->declare_parameter<std::string>("status_topic", 
-        "/status");
-
     cfg_path_ = node_->declare_parameter<std::string>("cfg_path", 
         "/config/config_mono.yaml");
 
