@@ -1,4 +1,0 @@
-[submodule "geo_vslam/stella_vslam_ros"]
-	path = component_stella_docker/stella_vslam_ros
-	url = https://github.com/movvo/stella_vslam_ros
-	branch = ros2_movvo_humble
