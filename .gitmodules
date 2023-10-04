@@ -1,3 +1,6 @@
 [submodule "component_stella_docker/stella_vslam_ros"]
 	path = component_stella_docker/stella_vslam_ros
 	url = https://github.com/movvo/stella_vslam_ros.git
+[submodule "component_stella_docker/dataset_publisher_ros2"]
+	path = component_stella_docker/dataset_publisher_ros2
+	url = https://github.com/mirellameelo/dataset_publisher_ros2.git

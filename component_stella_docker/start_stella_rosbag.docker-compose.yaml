@@ -1,0 +1,31 @@
+services:
+  stella_vslam-ros-server:
+    image: stella_vslam-ros-server
+    volumes:
+      - $PWD/inputs/:/inputs:rw
+    container_name: stella_vslam-ros-server
+    environment:
+      - ROS_DOMAIN_ID=$ROS_DOMAIN_ID
+    network_mode: "host"
+    privileged: true
+    command: "stella_vslam-ros-server"
+  stella_vslam-ros-socket:
+    image: stella_vslam-ros-socket
+    volumes:
+      - $PWD/inputs/:/inputs:rw
+    container_name: stella_vslam-ros-socket
+    environment:
+      - ROS_DOMAIN_ID=$ROS_DOMAIN_ID
+    network_mode: "host"
+    privileged: true
+    command: "/inputs/start_stella_vslam-ros.sh"
+  stella_vslam-rosbag:
+    image: stella_vslam-rosbag
+    volumes:
+      - $PWD/inputs/:/inputs:rw
+    container_name: stella_vslam-rosbag
+    environment:
+      - ROS_DOMAIN_ID=$ROS_DOMAIN_ID
+    network_mode: "host"
+    privileged: true
+    command: "/inputs/start_stella_vslam-rosbag.sh"
