@@ -21,7 +21,7 @@ for (( c=1; c<=$1; c++ ))
 do
   echo "Load process $i"
   docker exec -it -d stella_vslam-ros-socket /bin/bash -c ". /ros2_ws/install/setup.bash && ros2 run stella_vslam_ros run_slam -v /inputs/orb_vocab.fbow -c /inputs/euroc_example.yaml --map-db-out /inputs/map.db --ros-args -r /camera/image_raw:=/cam0/image_raw"
-  sleep 0.2
+  sleep 0.5
 done
 
 sleep 1
