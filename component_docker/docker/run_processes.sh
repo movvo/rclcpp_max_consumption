@@ -18,7 +18,7 @@ for (( c=1; c<=$1; c++ ))
 do
   echo "Load process $i"
   docker exec -it -d component_docker /bin/bash -c ". /ros2_ws/install/setup.bash && ros2 run component Component"
-  sleep 0.2
+  sleep 0.8
 done
 
 sleep 1
