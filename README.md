@@ -19,13 +19,15 @@ Build dockers using:
 ## Installation stella_vslam components docker
 Clone the submodules using: `git submodule update --recursive -i`
 
-Build dockers using:
-`./component_stella_docker/build_stella_docker.sh`
-`./component_stella_docker/build_stella_rosbag.sh`
+Go to folder `component_stella_docker` and build dockers using:
+`./build_stella_docker.sh`
+`./build_stella_rosbag.sh`
 
-Download rosbag euroc from: [url](https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasetshttps://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdataset)
+Download rosbag euroc from: [url](https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets)
 
-Transform ROS1 rosbag to ROS2 rosbag using python rosbags-convert like: `rosbags-convert /EuRoC/MH_04_difficult.bag ./MH_04_difficul`
+Install rosbags python package to transform Rosbag of ROS1 to ROS2 using `pip install rosbags` 
+
+Transform ROS1 rosbag to ROS2 rosbag using python rosbags-convert like: `rosbags-convert path_to_rosabg/EuRoC/MH_04_difficult.bag ./MH_04_difficul`
 
 Save the converted rosbag folder into `./component_stella_docker/inputs` and modify bash file `start_stella_vslam-rosbag.sh` with your rosbag folder name.
 
