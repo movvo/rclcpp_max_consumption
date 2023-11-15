@@ -7,6 +7,7 @@ docker run -it --rm -d\
     --volume=$(dirname $(dirname $(realpath $0)))/stella_vslam:/stella:rw \
     --volume=$(dirname $(dirname $(realpath $0)))/stella_vslam_ros:/ros2_ws/src/stella_vslam_ros:rw \
     --volume=$(dirname $(dirname $(realpath $0)))/inputs:/inputs:rw \
+    --volume=$(dirname $(dirname $(realpath $0)))/scripts:/ros2_ws/scripts:rw \
     --name=stella_vslam-ros-socket \
     stella_vslam-ros-socket:latest \
     tail -f /dev/null
