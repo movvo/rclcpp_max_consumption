@@ -14,7 +14,7 @@ docker run -it --rm -d\
 
 read -p 'In another terminal do: 
         docker exec -it stella_vslam-ros-socket /bin/bash
-        source install/setup.bash && ros2 run rclcpp_components component_container_mt
+        source install/setup.bash && ros2 run rclcpp_components component_container_isolated
         and press [ENTER]'
     
 docker exec -it -d stella_vslam-ros-socket /bin/bash -c ". /ros2_ws/install/setup.bash && ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 odom base_link"
