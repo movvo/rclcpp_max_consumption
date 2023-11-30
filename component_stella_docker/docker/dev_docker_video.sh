@@ -4,7 +4,7 @@ echo $(dirname $(dirname $(realpath $0)))
 docker run -it --rm -d\
     --env=ROS_DOMAIN_ID=$ROS_DOMAIN_ID \
     --net=host \
-    --volume=$(dirname $(dirname $(realpath $0)))/stella_vslam:/stella:rw \
+    --volume=$(dirname $(dirname $(realpath $0)))/stella_vslam/src:/stella/stella_vslam/src:rw \
     --volume=$(dirname $(dirname $(realpath $0)))/stella_vslam_ros:/ros2_ws/src/stella_vslam_ros:rw \
     --volume=$(dirname $(dirname $(realpath $0)))/inputs:/inputs:rw \
     --volume=$(dirname $(dirname $(realpath $0)))/scripts:/ros2_ws/scripts:rw \

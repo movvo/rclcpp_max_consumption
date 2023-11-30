@@ -1,41 +1,44 @@
 # LUMIX fisheye model for 1K setting
 
-#==============#
-# Camera Model #
-#==============#
+Camera:
+  name: "LUMIX DMC-GX8 8mm fisheye 1K"
+  setup: "monocular"
+  model: "fisheye"
 
-Camera.name: "LUMIX DMC-GX8 8mm fisheye 1K"
-Camera.setup: "monocular"
-Camera.model: "fisheye"
+  fx: 441.730011169
+  fy: 442.520822476
+  cx: 480.35667528
+  cy: 275.490228646
 
-Camera.fx: 441.730011169
-Camera.fy: 442.520822476
-Camera.cx: 480.35667528
-Camera.cy: 275.490228646
+  k1: -3.068701296607466433e-02
+  k2: -3.343454364086094217e-03
+  k3: -2.881735840896060968e-03
+  k4: -5.917420310474077278e-04
 
-Camera.k1: -3.068701296607466433e-02
-Camera.k2: -3.343454364086094217e-03
-Camera.k3: -2.881735840896060968e-03
-Camera.k4: -5.917420310474077278e-04
+  fps: 30.0
+  cols: 960
+  rows: 540
 
-Camera.fps: 30.0
-Camera.cols: 960
-Camera.rows: 540
+  color_order: "RGB"
 
-Camera.color_order: "RGB"
+Preprocessing:
+  min_size: 800
 
-#================#
-# ORB Parameters #
-#================#
+Feature:
+  name: "default ORB feature extraction setting"
+  scale_factor: 1.2
+  num_levels: 8
+  ini_fast_threshold: 20
+  min_fast_threshold: 7
 
-Feature.max_num_keypoints: 2000
-Feature.scale_factor: 1.2
-Feature.num_levels: 8
-Feature.ini_fast_threshold: 20
-Feature.min_fast_threshold: 7
+Initializer:
+  scaling_factor: 5.0
 
-#========================#
-# Initializer Parameters #
-#========================#
+Mapping:
+  baseline_dist_thr_ratio: 0.02
+  redundant_obs_ratio_thr: 0.9
+  num_covisibilities_for_landmark_generation: 20
+  num_covisibilities_for_landmark_fusion: 20
 
-Initializer.scaling_factor: 5.0
+System:
+  map_format: "msgpack"
